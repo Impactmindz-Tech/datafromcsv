@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.box:hover{
+    transform: translateY(-10px);
+}
+
+.main-word{
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each card */
+    height: 320px; /* Set the height of each card */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+  
+  .box.flip {
+    transform: rotateY(180deg);
+  }
+
+  .search-icon {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    margin: 0 10px 10px 0;
+}
+
+.search-icon svg {
+    width: 40px;
+    height: 40px;
+    color: #8d8d8d;
+}
+  
+  .search_bar {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
