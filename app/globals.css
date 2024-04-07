@@ -21,8 +21,8 @@
 }
 
 .box {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each card */
-    height: 320px; /* Set the height of each card */
+    flex: 0 0 calc(33.33% - 20px);
+    height: 320px;
     margin: 10px;
     padding: 20px;
     border: 1px solid #000;
@@ -30,7 +30,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.5s; /* Increase the transition duration for smoother animation */
+    perspective: 1000px; /* Add perspective for 3D effect */
 }
 
 .box:hover {
@@ -38,7 +39,7 @@
 }
   
   .box.flip {
-    transform: rotateY(180deg);
+    transform: rotateY(90deg);
   }
 
   .search-icon {
