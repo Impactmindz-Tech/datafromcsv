@@ -89,7 +89,13 @@ const Cards = () => {
             )}
             <div className="card-container">
                 {displayedCards.map((item, i) => (
-                    <div className={`box ${isFlipped ? 'flip' : ''}`} key={i}>{item.Idea}</div>
+                    
+                    <>
+                    <div className={`box ${isFlipped ? 'flip' : ''}`} key={i}>
+                        <div className="front">{item.Idea}</div>
+                        <div className="back">{item.Emotion}</div>
+                    </div>
+                    </>
                 ))}
             </div>
         </>
