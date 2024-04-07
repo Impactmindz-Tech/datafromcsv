@@ -13,7 +13,7 @@ const Cards = () => {
     const [filedata, setFileData] = useState<CSVData[]>([]);
     const [displayedCards, setDisplayedCards] = useState<CSVData[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const [isFlipped, setIsFlipped] = useState<boolean>(false); // State variable to toggle flip animation
+    const [isFlipped, setIsFlipped] = useState<boolean>(false); 
     const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -37,10 +37,10 @@ const Cards = () => {
         if (searchTerm !== '') {
             filteredData = filedata.filter(item => item.Emotion.toLowerCase().includes(searchTerm.toLowerCase()));
         }
-        setDisplayedCards(filteredData.slice(0, 9)); // Display the first 9 cards
-        setIsFlipped(true); // Trigger flip animation
+        setDisplayedCards(filteredData.slice(0, 9));
+        setIsFlipped(true); 
         setTimeout(() => {
-            setIsFlipped(false); // Reset flip animation after a short delay
+            setIsFlipped(false); 
         }, 500);
     }, [filedata, searchTerm]);
 
@@ -50,9 +50,9 @@ const Cards = () => {
                 const startIndex = Math.floor(Math.random() * (filedata.length - 9));
                 const displayedSet = filedata.slice(startIndex, startIndex + 9);
                 setDisplayedCards(displayedSet);
-                setIsFlipped(true); // Trigger flip animation
+                setIsFlipped(true); 
                 setTimeout(() => {
-                    setIsFlipped(false); // Reset flip animation after a short delay
+                    setIsFlipped(false); 
                 }, 500);
             }, 5000);
 
