@@ -73,7 +73,7 @@ const Cards = () => {
 
     return (
         <>
-             <div className="search-icon bottom-10 right-10 absolute z-50" onClick={toggleSearchVisibility}>
+            <div className="search-icon bottom-10 right-10 absolute z-50" onClick={toggleSearchVisibility}>
                 {isSearchVisible ? <FaTimes onClick={clearSearch} /> : <FaSearch />}
             </div>
             {isSearchVisible && (
@@ -91,9 +91,11 @@ const Cards = () => {
                 {displayedCards.map((item, i) => (
                     
                     <>
-                    <div className={`box ${isFlipped ? 'flip' : ''}`} key={i}>
-                        <div className="front">{item.Idea}</div>
-                        <div className="back">{item.Emotion}</div>
+                    <div className={"box card"} key={i}>
+                        <div className={`content ${isFlipped ? 'flip' : ''}`}>
+                            <div className="front">{item.Idea}</div>
+                            <div className="back">{item.Emotion}</div>
+                        </div>
                     </div>
                     </>
                 ))}
