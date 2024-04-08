@@ -13,7 +13,7 @@ const Cards = () => {
     const [filedata, setFileData] = useState<CSVData[]>([]);
     const [displayedCards, setDisplayedCards] = useState<CSVData[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const [isFlipped, setIsFlipped] = useState<boolean>(false); 
+    const [isFlipped, setIsFlipped] = useState<boolean>(false);
     const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -35,12 +35,12 @@ const Cards = () => {
     useEffect(() => {
         let filteredData = filedata;
         if (searchTerm !== '') {
-            filteredData = filedata.filter(item => item.Emotion.toLowerCase().includes(searchTerm.toLowerCase()));
+            filteredData = filedata.filter(item => item.Emotion.toLowerCase().includes(searchTerm.toLowerCase()) || item.Category.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
         }
-        setDisplayedCards(filteredData.slice(0, 9));
-        setIsFlipped(true); 
+        setDisplayedCards(filteredData.slice(0 , 9));
+        setIsFlipped(true);
         setTimeout(() => {
-            setIsFlipped(false); 
+            setIsFlipped(false);
         }, 500);
     }, [filedata, searchTerm]);
 
@@ -49,10 +49,11 @@ const Cards = () => {
             const intervalId = setInterval(() => {
                 const startIndex = Math.floor(Math.random() * (filedata.length - 9));
                 const displayedSet = filedata.slice(startIndex, startIndex + 9);
+                console.log(displayedSet, 'start')
                 setDisplayedCards(displayedSet);
-                setIsFlipped(true); 
+                setIsFlipped(true);
                 setTimeout(() => {
-                    setIsFlipped(false); 
+                    setIsFlipped(false);
                 }, 500);
             }, 5000);
 
@@ -80,7 +81,7 @@ const Cards = () => {
                 <div className="search-input">
                     <input
                         type="text"
-                        placeholder="Search by Emotion"
+                        placeholder="Search by Emotion & Category"
                         value={searchTerm}
                         onChange={handleSearchChange}
                         className="search_bar"
@@ -89,15 +90,13 @@ const Cards = () => {
             )}
             <div className="card-container">
                 {displayedCards.map((item, i) => (
-                    
-                    <>
+
                     <div className={"box card"} key={i}>
                         <div className={`content ${isFlipped ? 'flip' : ''}`}>
                             <div className="front">{item.Idea}</div>
                             <div className="back">{item.Emotion}</div>
                         </div>
                     </div>
-                    </>
                 ))}
             </div>
         </>

@@ -97,4 +97,13 @@
     color: #fff;
     text-transform: capitalize;
 }
+.back {
+    display: none;
+}
+.box:hover  .back{
+    display: block;
+}
 
+.box .content.flip{
+    transform: rotateY( 90deg ) ;
+}
