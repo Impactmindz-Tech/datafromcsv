@@ -1,7 +1,8 @@
 {
+  "homepage": "https://impactmindz-tech.github.io/datafromcsv",
   "name": "card-ideas",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +12,7 @@
   "dependencies": {
     "@types/papaparse": "^5.3.14",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.1.1",
     "i": "^0.3.7",
     "isomorphic-unfetch": "^4.0.2",
     "next": "14.1.4",
