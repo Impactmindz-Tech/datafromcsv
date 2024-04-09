@@ -54,7 +54,7 @@ const Cards = () => {
                 setIsFlipped(true);
                 setTimeout(() => {
                     setIsFlipped(false);
-                }, 500);
+                }, 100);
             }, 5000);
 
             return () => clearInterval(intervalId);
