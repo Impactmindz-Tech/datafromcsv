@@ -109,7 +109,3 @@
 .box:hover .back {
     display: block;
 }
-
-.box .content.flip {
-    transform: rotateY(180deg);
-}
